@@ -18,12 +18,11 @@ const map = [
 let pacman = { x: 1, y: 3, dx: 0, dy: 0 }
 let dotsEaten = 0;
 let pelletsEaten = 0;
-let scaredTime = 0; // seconds remaining
+let scaredTime = 0;
 let totalDots = 0;
 let totalPellets = 0;
 let elapsedTime = 0;
 
-// Count initial dots + pellets
 for (let row of map) {
     for (let c of row) {
         if (c === '.') totalDots++;
@@ -36,9 +35,8 @@ function drawMap() {
         for (let x = 0; x < map[y].length; x++) {
             const char = map[y][x];
             if (char === '#') {
-                // ctx.fillStyle = 'blue';
                 ctx.strokeStyle = "blue";
-                ctx.lineWidth = 2; // or thicker if you want
+                ctx.lineWidth = 2;
                 ctx.strokeRect(x * tileSize, y * tileSize, tileSize, tileSize);
             }
             else if (char === '.') {
@@ -73,10 +71,10 @@ document.addEventListener('keydown', e => {
     let nextX = pacman.x;
     let nextY = pacman.y;
 
-    if (e.key === "ArrowUp") nextY--;
-    if (e.key === "ArrowDown") nextY++;
-    if (e.key === "ArrowLeft") nextX--;
-    if (e.key === "ArrowRight") nextX++;
+    if (e.key === "ArrowUp" || e.key === "w" || e.key === "W") nextY--;
+    if (e.key === "ArrowDown" || e.key === "s" || e.key === "S") nextY++;
+    if (e.key === "ArrowLeft" || e.key === "a" || e.key === "A") nextX--;
+    if (e.key === "ArrowRight" || e.key === "d" || e.key === "D") nextX++;
 
     if (map[nextY][nextX] !== '#') {
         pacman.x = nextX;
@@ -91,7 +89,7 @@ document.addEventListener('keydown', e => {
             map[nextY] = map[nextY].substring(0, nextX) + ' ' + map[nextY].substring(nextX + 1);
         } else if (tile === 'o') {
             pelletsEaten++;
-            scaredTime = 16; // reset scare timer
+            scaredTime = 16;
             atePellet = true;
             map[nextY] = map[nextY].substring(0, nextX) + ' ' + map[nextY].substring(nextX + 1);
         }
