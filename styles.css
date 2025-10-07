@@ -8,6 +8,12 @@
     src: url(fonts/Emulogic-zrEw.ttf);
 }
 
+/* colors:
+yellow - #FCCF00
+orange - #EF8200
+red - #E50013
+*/
+
 * {
     padding: 0;
     margin: 0;
@@ -15,28 +21,26 @@
 }
 
 html, body {
-    background-color: #FCCF00;
+    color: #fff;
+    background-color: #000;
     height: 100vh;
 }
 
 header {
     text-align: center;
-    padding: 20px 0;
+    padding: 0 0 20px 0;
 }
 
 header h1 {
-    background-color: #EF8200;
-    font-family: Pacfont, 'Arial', sans-serif;
+    color: #FCCF00;
+    font-family: Emulogic, 'Arial', sans-serif;
     font-size: 3rem;
-    border: 0.3rem solid #E50013;
-    border-radius: 1rem;
     display: inline-block;
     padding: 15px;
 }
 
 header p {
     font-family: Emulogic, 'Arial', sans-serif;
-    padding: 15px 0;
 }
 
 #scared, #info {
@@ -52,6 +56,50 @@ header p {
 }
 
 canvas {
-    border: 10px solid #000099;
     background-color: #000000;
+    border: 10px solid #000099;
+    border-radius: 1rem;
+    width: 810px;
+    height: 270px;
+    image-rendering: pixelated;
+}
+
+.fruits-container {
+    width: 100vw;
+    overflow: hidden;
+}
+
+.fruits-scroll.left {
+    font-size: 2rem;
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll-left 20s linear infinite;
+    padding-left: 1em;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100vw);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.fruits-scroll.right {
+    font-size: 2rem;
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll-right 20s linear infinite;
+    padding-left: 1em;
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-100vw);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
 }

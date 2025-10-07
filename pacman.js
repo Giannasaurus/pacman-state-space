@@ -2,7 +2,7 @@ const canvas = document.getElementById('game')
 const ctx = canvas.getContext('2d')
 const info = document.getElementById('info');
 const scaredSign = document.getElementById('scared');
-const tileSize = 18;
+const tileSize = 20;
 
 const map = [
     "###############################",
