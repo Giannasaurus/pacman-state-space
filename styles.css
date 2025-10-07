@@ -1,0 +1,57 @@
+@font-face {
+    font-family: Pacfont;
+    src: url(fonts/PAC-FONT.TTF);
+}
+
+@font-face {
+    font-family: Emulogic;
+    src: url(fonts/Emulogic-zrEw.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: #FCCF00;
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    background-color: #EF8200;
+    font-family: Pacfont, 'Arial', sans-serif;
+    font-size: 3rem;
+    border: 0.3rem solid #E50013;
+    border-radius: 1rem;
+    display: inline-block;
+    padding: 15px;
+}
+
+header p {
+    font-family: Emulogic, 'Arial', sans-serif;
+    padding: 15px 0;
+}
+
+#scared, #info {
+    font-family: Emulogic, 'Arial', sans-serif;
+    text-align: center;
+    padding: 15px 0;
+}
+
+#outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    border: 10px solid #000099;
+    background-color: #000000;
+}
