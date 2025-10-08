@@ -67,6 +67,15 @@ function canMove(x, y) {
     return map[y][x] !== '#' && map[y][x] !== ' ';
 }
 
+function sendKey(key) {
+    document.dispatchEvent(new KeyboardEvent('keydown', { key }));
+}
+
+document.getElementById('up-btn').addEventListener('click', () => sendKey('ArrowUp'));
+document.getElementById('down-btn').addEventListener('click', () => sendKey('ArrowDown'));
+document.getElementById('left-btn').addEventListener('click', () => sendKey('ArrowLeft'));
+document.getElementById('right-btn').addEventListener('click', () => sendKey('ArrowRight'));
+
 document.addEventListener('keydown', e => {
     let nextX = pacman.x;
     let nextY = pacman.y;
