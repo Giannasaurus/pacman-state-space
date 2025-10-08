@@ -102,3 +102,55 @@ canvas {
         transform: translateX(100%);
     }
 }
+
+@media (max-width: 600px) {
+    /* Mobile styles */
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header p,
+    #scared,
+    #info {
+        font-size: 0.9rem;
+        padding: 8px 0;
+    }
+
+    canvas {
+        width: 98vw;
+        height: auto;
+        border-width: 5px;
+    }
+
+    .fruits-scroll.left,
+    .fruits-scroll.right {
+        font-size: 1.2rem;
+        padding-left: 0.3em;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    /* Tablet styles */
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header p,
+    #scared,
+    #info {
+        font-size: 1.2rem;
+        padding: 12px 0;
+    }
+
+    canvas {
+        width: 95vw;
+        height: auto;
+        border-width: 8px;
+    }
+
+    .fruits-scroll.left,
+    .fruits-scroll.right {
+        font-size: 1.6rem;
+        padding-left: 0.6em;
+    }
+}
