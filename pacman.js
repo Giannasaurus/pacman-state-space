@@ -98,7 +98,7 @@ document.addEventListener('keydown', e => {
             map[nextY] = map[nextY].substring(0, nextX) + ' ' + map[nextY].substring(nextX + 1);
         } else if (tile === 'o') {
             pelletsEaten++;
-            scaredTime = 15;
+            scaredTime = 16;
             atePellet = true;
             map[nextY] = map[nextY].substring(0, nextX) + ' ' + map[nextY].substring(nextX + 1);
         }
