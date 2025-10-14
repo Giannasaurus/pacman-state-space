@@ -28,13 +28,13 @@ html, body {
 
 header {
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
 }
 
 header h1 {
     color: #FCCF00;
     font-family: Emulogic, 'Arial', sans-serif;
-    font-size: 3rem;
+    font-size: 2.5rem;
     display: inline-block;
 }
 
@@ -45,7 +45,7 @@ header p {
 #scared, #info {
     font-family: Emulogic, 'Arial', sans-serif;
     text-align: center;
-    padding: 15px 0;
+    padding: 10px 0;
 }
 
 #outer {
@@ -61,6 +61,24 @@ canvas {
     width: 810px;
     height: 270px;
     image-rendering: pixelated;
+}
+
+.scared-time-control {
+    text-align: center;
+    padding: 10px 0;
+    font-family: Emulogic, 'Arial', sans-serif;
+    color: #FCCF00;
+}
+
+.scared-time-control input[type="number"] {
+    font-family: Emulogic, 'Arial', sans-serif;
+    font-size: 1.2rem;
+    border: 3px solid #EF8200;
+    border-radius: 0.3em;
+    background: #000;
+    color: #FCCF00;
+    text-align: center;
+    padding: 0.2rem 0 0.2rem 0.5rem;
 }
 
 .fruits-container {

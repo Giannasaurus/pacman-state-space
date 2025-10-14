@@ -22,6 +22,7 @@ let scaredTime = 0;
 let totalDots = 0;
 let totalPellets = 0;
 let elapsedTime = 0;
+let scaredTimeDefault = 16;
 
 for (let row of map) {
     for (let c of row) {
@@ -76,6 +77,16 @@ document.getElementById('down-btn').addEventListener('click', () => sendKey('Arr
 document.getElementById('left-btn').addEventListener('click', () => sendKey('ArrowLeft'));
 document.getElementById('right-btn').addEventListener('click', () => sendKey('ArrowRight'));
 
+const scaredInput = document.getElementById('scared-input');
+if (scaredInput) {
+    scaredInput.addEventListener('input', () => {
+        const val = parseInt(scaredInput.value, 10);
+        if (!isNaN(val) && val > 0) {
+            scaredTimeDefault = val;
+        }
+    });
+}
+
 document.addEventListener('keydown', e => {
     let nextX = pacman.x;
     let nextY = pacman.y;
@@ -98,12 +109,11 @@ document.addEventListener('keydown', e => {
             map[nextY] = map[nextY].substring(0, nextX) + ' ' + map[nextY].substring(nextX + 1);
         } else if (tile === 'o') {
             pelletsEaten++;
-            scaredTime = 16;
+            scaredTime = scaredTimeDefault; // use user input value
             atePellet = true;
             map[nextY] = map[nextY].substring(0, nextX) + ' ' + map[nextY].substring(nextX + 1);
         }
 
-        // Only decrement if not just ate a pellet
         if (scaredTime > 0 && !atePellet) scaredTime--;
     }
 
